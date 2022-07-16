@@ -1,0 +1,29 @@
+{
+  "name": "tally-quiz",
+  "version": "1.0.0",
+  "description": "ShawCoders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-jwt": "^7.7.5",
+    "fs": "^0.0.1-security",
+    "google-auth-library": "^8.1.1",
+    "googleapis": "^105.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mailgun-js": "^0.22.0",
+    "mime": "^3.0.0",
+    "mongodb": "^4.8.0",
+    "mongoose": "^6.4.4",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7"
+  }
+}
