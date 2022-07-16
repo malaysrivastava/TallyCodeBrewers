@@ -1,0 +1,6 @@
+.quizcard{
+    border: 1px solid grey;
+    padding: .5rem;
+    margin: 1rem;
+    text-align: center;
+}
