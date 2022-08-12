@@ -36,7 +36,7 @@ const Landing = () => {
     
     axios({
         method:"POST",
-        url:"http://localhost:8001/api/auth/googlelogin/",
+        url:"https://quiz-app-hackathon.herokuapp.com/api/auth/googlelogin/",
         data:{tokenId:response.tokenId}
     })
     .then(response=>{

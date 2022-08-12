@@ -104,7 +104,7 @@ return true;
         if(NotEmpty() && Qname!=''){
           axios({
             method:"POST",
-            url:"http://localhost:8001/api/quiz/addQ",
+            url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/addQ",
             headers: {
                 'x-auth-token': token
             },

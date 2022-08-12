@@ -19,10 +19,29 @@ const Dashboard=()=>{
       const [load,setLoad] = useState(false);
       const [quizData,setQuizData] = useState([])
 
+      const sortByScore=()=>{
+        quizData.forEach(element => {
+            var userArray = element.userAttempted;
+            userArray.sort(function(a,b){
+              var A = a.scored;
+              var B = b.scored;
+
+              if(A <= B){
+                return -1;
+              }
+              if(A > B){
+                return 1;
+              }
+            })
+
+
+        });
+      }
+
     const loadQuiz=()=>{
       axios({
         method:"POST",
-        url:"http://localhost:8001/api/quiz/id",
+        url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/id",
         headers: {
             'x-auth-token': token
         },
@@ -43,7 +62,7 @@ const Dashboard=()=>{
     const endQuiz=(Qname,id)=>{
       axios({
         method:"PUT",
-        url:"http://localhost:8001/api/quiz/end",
+        url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/end",
         headers: {
             'x-auth-token': token
         },

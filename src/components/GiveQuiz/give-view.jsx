@@ -59,7 +59,7 @@ const View=({qtoken,mail,handleChange,handleSubmit1,handleSubmit2,goto,quizname,
                 required
                 fullWidth
                 value={mail}
-                label="Email Address"
+                label="Username"
                 name="mail"
                 onChange={handleChange}
                 autoComplete="email"
