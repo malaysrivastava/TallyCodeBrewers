@@ -11,6 +11,7 @@ export default function PrivateRoute({ children, ...rest }) {
 
   
   useEffect(()=>{
+    if(token && token!=null && token!="dfdxfdf"){
       jwt.verify(token,'my-32-character-ultra-secure-and-ultra-long-secret',function(err,decode){
         console.log('hello')
         if(err){
@@ -25,6 +26,9 @@ export default function PrivateRoute({ children, ...rest }) {
           }
         }
       });
+    } else{
+      setLog(false)
+    }
     },[log])
 
   return (
