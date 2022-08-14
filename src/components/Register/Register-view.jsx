@@ -3,6 +3,7 @@ import {useEffect} from 'react';
 import { GoogleLogin } from 'react-google-login';
 import LinearProgress from '@mui/material/LinearProgress';
 import {Grid,Paper} from '@material-ui/core'
+import { gapi } from "gapi-script";
 
 
 
@@ -17,6 +18,13 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
    backgroundColor:'white'
  }
 
+ const start=()=> {
+  gapi.client.init({
+    clientId: "886855388386-dso0i53jsk9sgqu7i5ir1tmtrr172bpi.apps.googleusercontent.com",
+    scope: 'email',
+    plugin_name: 'PLUGIN'
+  });
+}
 
  useEffect(() => {
   const timer = setInterval(() => {
@@ -27,7 +35,9 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
       const diff = Math.random() * 10;
       return Math.min(oldProgress + diff, 100);
     });
-  }, 500);
+
+    gapi.load('client:auth2', start);
+  }, [500]);
 
   return () => {
     clearInterval(timer);

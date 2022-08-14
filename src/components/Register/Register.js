@@ -47,7 +47,7 @@ const Landing = () => {
     
   }
 const responseErrorGoogle = (response)=>{
-         console.log('Google login failed')
+         console.log(response,'Google login failed')
 } 
 
 
