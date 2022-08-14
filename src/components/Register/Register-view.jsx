@@ -52,7 +52,7 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
       <div className='Gsuit'>
   
         <GoogleLogin
-            clientId="233905196668-6010oh4hlatb7bna850l7tu8tc4hj2v4.apps.googleusercontent.com"
+            clientId="122504219718-8msdl1sbvd3e03m5lt20ag04k6sg7iip.apps.googleusercontent.com"
             buttonText="Login with Google"
             onSuccess={responseSuccessGoogle}
             onFailure={responseErrorGoogle}
