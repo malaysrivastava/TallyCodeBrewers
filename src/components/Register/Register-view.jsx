@@ -52,13 +52,11 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
       <div className='Gsuit'>
   
         <GoogleLogin
-            clientId="122504219718-8msdl1sbvd3e03m5lt20ag04k6sg7iip.apps.googleusercontent.com"
+            clientId="886855388386-dso0i53jsk9sgqu7i5ir1tmtrr172bpi.apps.googleusercontent.com"
             buttonText="Login with Google"
             onSuccess={responseSuccessGoogle}
             onFailure={responseErrorGoogle}
             cookiePolicy={'single_host_origin'}
-          
-            
         />
        
       </div> 
