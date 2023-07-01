@@ -15,4 +15,6 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source
-CMD ["npm", "start"]
+COPY . .
+CMD [ "npm", "run", "start" ]
+EXPOSE 8000/tcp
