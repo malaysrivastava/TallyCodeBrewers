@@ -299,7 +299,7 @@ const View = ({open,urltoken,handleClose,logOutUser,handleChange1,handleChange2,
                                       message: 'Press #{key} to copy',
                                     })}>Copy quiz code</Button>
                  
-                  <Button className="bg-warning m-1" onClick={()=>copy('http://localhost:3000/give?token='+urltoken, {
+                  <Button className="bg-warning m-1" onClick={()=>copy('https://tally-quiz-app.netlify.app/give?token='+urltoken, {
                                       debug: true,
                                       message: 'Press #{key} to copy',
                                     })}>Copy quiz link</Button>
