@@ -76,6 +76,7 @@ router.post('/check', async (req,res)=>{
 
 router.post('/submit', async (req,res)=>{
     const data = req.body;
+    console.log(data)
     let score={
         user:data.email,
         scored:0,
@@ -86,7 +87,7 @@ router.post('/submit', async (req,res)=>{
     let Pdate = new Date().getTime();
     try {
         Quiz.find({token:data.token},async (err,quiz)=>{
-            if(quiz && quiz.length > 0){
+            if(quiz && quiz?.length > 0){
                 
                 var Edate = new Date(quiz[0].end).getTime();
 
@@ -94,30 +95,30 @@ router.post('/submit', async (req,res)=>{
                     return res.status(202).json({message:"Quiz is no more taking responses"});
                 }
 
-                for (let index = 0; index < quiz[0].text.length; index++) {
-                    let org = quiz[0].text[index].ans;
-                    let resp = data.text[index].ans;
+                for (let index = 0; index < quiz[0]?.text?.length; index++) {
+                    let org = quiz[0]?.text[index]?.ans;
+                    let resp = data?.text[index]?.ans;
                     if(org===resp){
-                        score.correct=score.correct+1;
-                        score.scored = score.scored + quiz[0].text[index].pts;
+                        score.correct=score?.correct+1;
+                        score.scored = score?.scored + quiz[0]?.text[index]?.pts;
                     } else{
-                        score.incorrect = score.incorrect+1;
+                        score.incorrect = score?.incorrect+1;
                     }
-                    score.totalScore = score.totalScore+quiz[0].text[index].pts;
+                    score.totalScore = score?.totalScore+quiz[0]?.text[index]?.pts;
                 }
 
-                for (let index = 0; index < quiz[0].MCQ.length; index++) {
-                    let org = quiz[0].MCQ[index].ans;
-                    let resp = data.MCQ[index].ans;
+                for (let index = 0; index < quiz[0]?.MCQ?.length; index++) {
+                    let org = quiz[0]?.MCQ[index]?.ans;
+                    let resp = data?.MCQ[index]?.ans;
                     if(org===resp){
-                        score.correct=score.correct+1;
-                        score.scored = score.scored + quiz[0].text[index].pts;
+                        score.correct=score?.correct+1;
+                        score.scored = score?.scored + quiz[0]?.text[index]?.pts;
                     } else{
-                        score.incorrect = score.incorrect+1;
+                        score.incorrect = score?.incorrect+1;
                     }
-                    score.totalScore = score.totalScore+quiz[0].MCQ[index].pts;
+                    score.totalScore = score?.totalScore+quiz[0]?.MCQ[index]?.pts;
                 }
-                await Quiz.findByIdAndUpdate(quiz[0]._id, {
+                await Quiz.findByIdAndUpdate(quiz[0]?._id, {
                     $push: {userAttempted: score}
                 });
 
