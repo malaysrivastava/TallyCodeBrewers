@@ -58,7 +58,7 @@ let handleChange2 = (i, e) => {
             }
           axios({
             method:"POST",
-            url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/submit",
+            url:"https://tallyquiz-malay.b4a.run/api/quiz/submit",
             data:userRes
         })   
         .then((res) => {
@@ -87,7 +87,7 @@ let handleChange2 = (i, e) => {
           } else {
             axios({
               method:"POST",
-              url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/check",
+              url:"https://tallyquiz-malay.b4a.run/api/quiz/check",
               data:{
                    token:qtoken,
                    email:mail,

@@ -33,10 +33,9 @@ const Landing = () => {
       localStorage.setItem('Token',data.data.token);
       localStorage.setItem('User',JSON.stringify(data.data.user))
     }
-    
     axios({
         method:"POST",
-        url:"https://quiz-app-hackathon.herokuapp.com/api/auth/googlelogin/",
+        url:`https://tallyquiz-malay.b4a.run/api/auth/googlelogin/`,
         data:{tokenId:response.tokenId}
     })
     .then(response=>{

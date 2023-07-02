@@ -41,7 +41,7 @@ const Dashboard=()=>{
     const loadQuiz=()=>{
       axios({
         method:"POST",
-        url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/id",
+        url:"https://tallyquiz-malay.b4a.run/api/quiz/id",
         headers: {
             'x-auth-token': token
         },
@@ -62,7 +62,7 @@ const Dashboard=()=>{
     const endQuiz=(Qname,id)=>{
       axios({
         method:"PUT",
-        url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/end",
+        url:"https://tallyquiz-malay.b4a.run/api/quiz/end",
         headers: {
             'x-auth-token': token
         },
