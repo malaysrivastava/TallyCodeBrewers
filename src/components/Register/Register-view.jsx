@@ -19,11 +19,11 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
  }
 
  const start=()=> {
-  gapi.client.init({
+  gapi.auth2.init({
     clientId: "886855388386-dso0i53jsk9sgqu7i5ir1tmtrr172bpi.apps.googleusercontent.com",
     scope: 'email',
     plugin_name: 'PLUGIN'
-  });
+  })
 }
 
  useEffect(() => {
@@ -36,8 +36,8 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
       return Math.min(oldProgress + diff, 100);
     });
 
-    gapi.load('client:auth2', start);
-  }, [500]);
+    //gapi.load('client:auth2', start);
+  }, [5]);
 
   return () => {
     clearInterval(timer);

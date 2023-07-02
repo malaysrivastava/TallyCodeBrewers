@@ -6,8 +6,8 @@ import axios from "axios";
 
 const Home =()=>{
 
-  const user_id = JSON.parse(localStorage.getItem('User'))._id
-  const user_name = JSON.parse(localStorage.getItem('User')).name
+  const user_id = JSON.parse(localStorage.getItem('User'))?._id
+  const user_name = JSON.parse(localStorage.getItem('User'))?.name
   const token = localStorage.getItem("Token")
   
   const [load,setLoad] = useState(false);
@@ -104,7 +104,7 @@ return true;
         if(NotEmpty() && Qname!=''){
           axios({
             method:"POST",
-            url:"https://quiz-app-hackathon.herokuapp.com/api/quiz/addQ",
+            url:"https://tallyquiz-malay.b4a.run/api/quiz/addQ",
             headers: {
                 'x-auth-token': token
             },
