@@ -17,4 +17,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 CMD [ "npm", "run", "start" ]
-EXPOSE 8000/tcp
+
+EXPOSE 8001:8001
